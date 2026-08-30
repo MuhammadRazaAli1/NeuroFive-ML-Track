@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os  # Yeh naya import add kiya hai for path handling
 
 # Set the page configuration
 st.set_page_config(page_title="Titanic Survival Predictor", page_icon="🚢", layout="centered")
@@ -9,7 +10,11 @@ st.set_page_config(page_title="Titanic Survival Predictor", page_icon="🚢", la
 # @st.cache_resource ensures the model is loaded only once, making the app faster
 @st.cache_resource
 def load_model():
-    return joblib.load('titanic_model.joblib')
+    # app.py ki exact location nikal rahe hain taake cloud par path ka masla na aaye
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, 'titanic_model.joblib')
+    
+    return joblib.load(model_path)
 
 model = load_model()
 
