@@ -1,13 +1,19 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os  # Yeh import add kiya gaya hai
 
 st.set_page_config(page_title="AutoPrice AI", page_icon="🚗", layout="wide")
 
-# Load model pipeline
+# Load model pipeline with absolute path
 @st.cache_resource
 def load_model():
-    return joblib.load('vehicle_pricing_engine.joblib')
+    # Is file (app.py) ki current directory ka path nikalen
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Directory path ko joblib file ke naam ke sath jor dain
+    model_path = os.path.join(current_dir, 'vehicle_pricing_engine.joblib')
+    
+    return joblib.load(model_path)
 
 pipeline = load_model()
 

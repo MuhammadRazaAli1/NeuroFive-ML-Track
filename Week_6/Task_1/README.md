@@ -11,7 +11,7 @@ Pricing a used vehicle accurately is a challenge due to market volatility, depre
 5. **Deployment:** Saved the entire pipeline using `joblib` and deployed an interactive, real-time web application using **Streamlit**.
 
 ## 🚀 Live Application
-Test the valuation engine here: **[Insert Your Streamlit App Link]**
+Test the valuation engine here: **https://auto-price-prediction.streamlit.app/**
 
 ## 💻 How to Run Locally
 1. Clone the repository.
