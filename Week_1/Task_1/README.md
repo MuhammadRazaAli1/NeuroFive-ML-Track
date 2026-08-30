@@ -1,0 +1,1 @@
+The dataset contains a total of 891 rows and 12 columns. I observed that the 'Age' and 'Cabin' columns have a significant number of missing values that need to be handled prior to model training. The dataset includes both categorical features (such as Sex and Embarked) and numerical features (such as Fare), presenting a great challenge for data cleaning.
